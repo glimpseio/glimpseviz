@@ -1,0 +1,2 @@
+# glimpseviz
+The Glimpse format
