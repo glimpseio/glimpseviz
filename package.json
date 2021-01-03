@@ -31,7 +31,8 @@
   "scripts": {
     "prebuild": "yarn clean",
     "build": "yarn build:only",
-    "build:only": "tsc -p tsconfig.build.json",
+    "build:only": "tsc -p tsconfig.json",
+    "buildOLD:only": "tsc -p tsconfig.build.json",
     "clean": "rimraf build && rimraf examples/build",
     "copy:build": "rsync -r build/* examples/build",
     "eslintbase": "eslint .",
