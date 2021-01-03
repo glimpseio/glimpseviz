@@ -1,4 +1,4 @@
-# glimpseviz
+[![Build Status](https://github.com/glimpseio/glimpseviz/workflows/Test/badge.svg?branch=master)](https://github.com/glimpseio/glimpseviz/actions)
 
 ## The Glimpse Format
 

@@ -35,7 +35,7 @@ describe('glimpse-api', () => {
 
   describe('load glimpse', () => {
     it('should load from uncompessed file.', () => {
-      const contents: Uint8Array = fs.readFileSync("examples/density.glimpse")
+      const contents: Uint8Array = fs.readFileSync("examples/density.glimpse");
       // const uncompressed = pako.inflate(contents, {to: 'string'});
       const spec: GlimpseViz = JSON.parse(contents.toString());
       // console.log(spec);
@@ -47,7 +47,7 @@ describe('glimpse-api', () => {
     });
 
     it('should load from compressed file.', () => {
-      const contents: Uint8Array = fs.readFileSync("examples/pareto.glimpse")
+      const contents: Uint8Array = fs.readFileSync("examples/pareto.glimpse");
       const uncompressed = pako.inflate(contents, {to: 'string'});
 
       // console.log("uncompressed", uncompressed);
