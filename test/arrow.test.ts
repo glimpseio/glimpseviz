@@ -1,10 +1,7 @@
-import {makeConfig} from '../src/index';
 
-
+import * as fs from 'fs';
 import {Table, FloatVector, DateVector, Float16Vector, Schema, RecordBatchJSONWriter, JSONMessageReader, RecordBatchStreamReader, ArrowJSONLike} from 'apache-arrow';
 
-import fs from 'fs';
-import path from 'path';
 
 describe('arrow-api', () => {
   describe('create arrow', () => {
