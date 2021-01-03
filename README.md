@@ -1,5 +1,7 @@
 # glimpseviz
 
+[![Build Status](https://github.com/glimpseio/glimpseviz/workflows/Test/badge.svg)]
+
 ## The Glimpse Format
 
 The Glimpse format is a stand-alone file format, usually with the `.glimpse` suffix, that contains everything necessary to render a rich data visualization in modern browsers.
