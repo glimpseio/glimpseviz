@@ -13,3 +13,4 @@ prettier.config.js
 tsconfig.json
 yarn-debug.log*
 yarn-error.log*
+.*.swp
