@@ -5,16 +5,14 @@ import {GlimpseTheme} from '../src/config';
 
 // import {SignalRef} from 'vega';
 
-import vg from 'vega';
-import vgg from 'vega-lite';
+import * as vg from 'vega';
+import * as vgg from 'vega-lite';
 import {TopLevelSpec as GlimpseViz} from 'vega-lite';
 
 import {compile as compileGrammar} from 'vega-lite';
 
-import pako from 'pako';
+import * as pako from 'pako';
 
-import fs from 'fs';
-import path from 'path';
 
 describe('glimpse-format', () => {
   describe('load glimpse', () => {
