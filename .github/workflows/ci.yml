@@ -9,13 +9,15 @@ on:
 jobs:
   test-matrix:
     name: Node
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node: [14]
-
+        node: [15]
+        os: [macos-latest]
     steps:
       - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
 
       - name: Setup Node ${{ matrix.node }}
         uses: actions/setup-node@v1
@@ -23,11 +25,11 @@ jobs:
           node-version: ${{ matrix.node }}
 
       - name: Install Node dependencies
-        run: yarn install
-
-      - name: Tests
-        run: yarn test
+        run: yarn --frozen-lockfile
 
       - name: Build
         run: yarn build
+
+      - name: Tests
+        run: yarn test
 
