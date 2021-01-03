@@ -1,17 +1,15 @@
-import {makeConfig} from '../src/index';
 
-
-import {GlimpseTheme} from '../src/config';
-
-// import {SignalRef} from 'vega';
+import * as fs from 'fs';
+import * as pako from 'pako';
 
 import * as vg from 'vega';
 import * as vgg from 'vega-lite';
-import {TopLevelSpec as GlimpseViz} from 'vega-lite';
 
+import {TopLevelSpec as GlimpseViz} from 'vega-lite';
 import {compile as compileGrammar} from 'vega-lite';
 
-import * as pako from 'pako';
+import {makeConfig} from '../src/index';
+import {GlimpseTheme} from '../src/config';
 
 
 describe('glimpse-format', () => {
