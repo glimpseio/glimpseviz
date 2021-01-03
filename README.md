@@ -1,4 +1,4 @@
-# Glimpse Data Visualization Format & JS Reference Implementation
+# Glimpse Data Visualizations
 
 ![Build Status](https://github.com/glimpseio/glimpseviz/workflows/Test/badge.svg)
 
