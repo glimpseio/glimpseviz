@@ -2,14 +2,14 @@ import pkg from '../package.json';
 const version = pkg.version;
 
 import {Config, ConfigA, ConfigB} from './config';
-import {Table} from 'apache-arrow';
+//import {Table} from 'apache-arrow';
 import {TopLevelSpec} from 'vega-lite';
 
 export {version};
 
 export * as vg from 'vega';
 export * as vgg from 'vega-lite';
-export * as arrow from 'apache-arrow';
+//export * as arrow from 'apache-arrow';
 
 export function makeConfig(): Config {
   let cfga: ConfigA = {

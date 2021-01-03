@@ -6,6 +6,13 @@ import { terser } from 'rollup-plugin-terser';
 
 const pkg = require('./package.json');
 
+function onwarn(warning, defaultHandler) {
+  if (warning.code !== 'CIRCULAR_DEPENDENCY') {
+    defaultHandler(warning);
+  }
+}
+
+
 const plugins = (browserslist, declaration) => [
   resolve(),
   json(),
