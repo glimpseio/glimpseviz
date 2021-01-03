@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [15]
+        node: [14]
 
     steps:
       - uses: actions/checkout@v2
@@ -23,7 +23,7 @@ jobs:
           node-version: ${{ matrix.node }}
 
       - name: Install Node dependencies
-        run: yarn
+        run: yarn install
 
       - name: Tests
         run: yarn test
