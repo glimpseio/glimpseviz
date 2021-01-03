@@ -1,0 +1,99 @@
+{
+  "name": "glimpse",
+  "version": "0.9.3",
+  "description": "Create and render data visualizations in the Glimpse format.",
+  "keywords": [
+    "visualization",
+    "analytics"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Glimpse I/O, Inc.",
+    "url": "https://www.glimpse.io"
+  },
+  "type": "module",
+  "main": "build/glimpse.js",
+  "module": "build/glimpse.module.js",
+  "unpkg": "build/glimpse.min.js",
+  "jsdelivr": "build/glimpse.min.js",
+  "types": "build/glimpse.module.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/glimpseio/GlimpseAPI.git"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "files": [
+    "src",
+    "build"
+  ],
+  "scripts": {
+    "prebuild": "yarn clean",
+    "build": "yarn build:only",
+    "build:only": "tsc -p tsconfig.build.json && rollup -c",
+    "clean": "rimraf build && rimraf examples/build",
+    "copy:data": "rsync -r node_modules/vega-datasets/data/* examples/data",
+    "copy:build": "rsync -r build/* examples/build",
+    "eslintbase": "eslint .",
+    "format": "yarn eslintbase --fix && yarn prettierbase --write",
+    "lint": "yarn eslintbase && yarn prettierbase --check",
+    "test": "jest test/",
+    "test:inspect": "node --inspect-brk ./node_modules/.bin/jest --runInBand test",
+    "test:runtime": "TZ=America/Los_Angeles jest test-runtime/",
+    "test:runtime:generate": "yarn build:only && rimraf test-runtime/resources && VL_GENERATE_TESTS=true yarn test:runtime",
+    "watch": "tsc -p tsconfig.build.json -w",
+    "watch:site": "yarn build:site -w",
+    "watch:test": "jest --watch"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-typescript": "^7.12.7",
+    "@rollup/plugin-babel": "^5.2.2",
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^11.0.1",
+    "@types/chai": "^4.2.14",
+    "@types/d3": "^6.2.0",
+    "@types/jest": "^26.0.19",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.4.4",
+    "@types/pako": "^1.0.1",
+    "pako": "^2.0.2",
+    "@wessberg/rollup-plugin-ts": "^1.3.4",
+    "browser-sync": "^2.26.12",
+    "concurrently": "^5.3.0",
+    "gh-pages": "^3.1.0",
+    "prettier": "^2.2.1",
+    "eslint": "^7.16.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-jest": "^24.1.3",
+    "eslint-plugin-prettier": "^3.3.0",
+    "rollup": "^2.28.1",
+    "rollup-plugin-bundle-size": "^1.0.3",
+    "rollup-plugin-terser": "^7.0.2",
+    "ts-json-schema-generator": "^0.82.0",
+    "typescript": "~4.1.3",
+    "ts-node": "^9.1.1",
+    "vega-cli": "^5.17.3",
+    "vega-datasets": "~2.2.0",
+    "yaml-front-matter": "^4.1.1",
+    "apache-arrow": "^2.0.0",
+    "vega": "~5.17.0",
+    "vega-lite": "~4.17.0",
+    "vega-loader-arrow": "~0.0.9"
+  },
+  "peerDependencies": {},
+  "jest": {
+    "preset": "ts-jest",
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules",
+      "<rootDir>/build",
+      "<rootDir>/_site",
+      "<rootDir>/src"
+    ],
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": false
+  }
+}
