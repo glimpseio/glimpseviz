@@ -23,12 +23,12 @@ describe('arrow-api', () => {
       expect(rainfall.get(1).toJSON()).toStrictEqual({"date": new Date("2020-12-12T00:00:00.000Z"), "precipitation": 1});
 
       function writeJSON(table: Table): string {
-        // note that `serialize(encoding = 'binary', stream = true)` should do this, but the 'json' encoding is not implemented
+        // note that `serialize(encoding = 'binary', stream = true)` should do this, only the 'binary' encoding is implemented
+        // const data = table.serialize('binary');
         const writer: RecordBatchJSONWriter = RecordBatchJSONWriter.writeAll(rainfall);
         const string = writer.toString(true);
         return string;
       }
-
 
       const rainfallJSON = writeJSON(rainfall);
       // console.log("JSON", rainfallJSON);

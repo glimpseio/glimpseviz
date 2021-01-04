@@ -1,6 +1,6 @@
 {
   "name": "glimpse",
-  "version": "0.9.3",
+  "version": "0.8.3",
   "description": "Create and render data visualizations in the Glimpse format.",
   "keywords": [
     "visualization",
@@ -96,5 +96,3 @@
     "collectCoverage": false
   }
 }
-
-

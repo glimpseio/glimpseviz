@@ -28,9 +28,9 @@ describe('glimpse-format', () => {
 
     it('should load from compressed file.', () => {
       const contents: Uint8Array = fs.readFileSync("examples/glimpse/pareto.glimpse");
-      const uncompressed = pako.inflate(contents, {to: 'string'});
+      const uncompressed: string = pako.inflate(contents, {to: 'string'});
 
-      // console.log("uncompressed", uncompressed);
+      console.log("uncompressed", uncompressed);
 
       const spec: GlimpseViz = JSON.parse(uncompressed);
       // console.log(spec);
