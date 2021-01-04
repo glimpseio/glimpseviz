@@ -25,7 +25,8 @@
     "test/**/*.ts"
   ],
   "exclude": [
-    "build/**/*"
+    "build/**/*",
+    "node_modules/apache-arrow/**/*"
   ]
 }
 

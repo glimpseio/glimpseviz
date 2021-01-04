@@ -8,8 +8,10 @@ import {TopLevelSpec} from 'vega-lite';
 export {version};
 
 export * as vg from 'vega';
-export * as vgg from 'vega-lite';
-//export * as arrow from 'apache-arrow';
+
+// export * as vgg from 'vega-lite'; // rollup complaint
+
+// export * as arrow from 'apache-arrow'; // tsc complaint
 
 export function makeConfig(): Config {
   let cfga: ConfigA = {

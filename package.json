@@ -31,9 +31,9 @@
   "scripts": {
     "prebuild": "yarn clean",
     "build": "yarn build:only",
-    "build:only": "tsc -p tsconfig.build.json",
+    "build:only": "tsc -p tsconfig.build.json && rollup -c",
     "clean": "rimraf build && rimraf examples/build",
-    "copy:build": "rsync -r build/* examples/build",
+    "copy:build": "cp -v build/*.js ../GUI/GlimpseModel/Resources/js",
     "eslintbase": "eslint .",
     "format": "yarn eslintbase --fix && yarn prettierbase --write",
     "lint": "yarn eslintbase && yarn prettierbase --check",
