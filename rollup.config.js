@@ -1,5 +1,6 @@
 import json from '@rollup/plugin-json';
 import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 import ts from '@wessberg/rollup-plugin-ts';
 import bundleSize from 'rollup-plugin-bundle-size';
 import { terser } from 'rollup-plugin-terser';
@@ -15,6 +16,7 @@ function onwarn(warning, defaultHandler) {
 
 const plugins = (browserslist, declaration) => [
   resolve(),
+  commonjs(),
   json(),
   ts({
     tsconfig: (resolvedConfig) => ({

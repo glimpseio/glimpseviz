@@ -30,7 +30,7 @@ describe('glimpse-format', () => {
       const contents: Uint8Array = fs.readFileSync("examples/glimpse/pareto.glimpse");
       const uncompressed: string = pako.inflate(contents, {to: 'string'});
 
-      console.log("uncompressed", uncompressed);
+      // console.log("uncompressed", uncompressed);
 
       const spec: GlimpseViz = JSON.parse(uncompressed);
       // console.log(spec);
