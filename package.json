@@ -1,6 +1,6 @@
 {
-  "name": "glimpse",
-  "version": "0.8.3",
+  "name": "glimpseviz",
+  "version": "0.8.4",
   "description": "Create and render data visualizations in the Glimpse format.",
   "keywords": [
     "visualization",
@@ -12,11 +12,11 @@
     "url": "https://www.glimpse.io"
   },
   "type": "module",
-  "main": "build/glimpse.js",
-  "module": "build/glimpse.module.js",
-  "unpkg": "build/glimpse.min.js",
-  "jsdelivr": "build/glimpse.min.js",
-  "types": "build/glimpse.module.d.ts",
+  "main": "build/glimpseviz.js",
+  "module": "build/glimpseviz.module.js",
+  "unpkg": "build/glimpseviz.min.js",
+  "jsdelivr": "build/glimpseviz.min.js",
+  "types": "build/glimpseviz.module.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/glimpseio/GlimpseAPI.git"
