@@ -1,6 +1,6 @@
 # Glimpse Data Visualizations
 
-![Build Status](https://github.com/glimpseio/glimpseviz/workflows/Tests/badge.svg)
+[![Build Status](https://github.com/glimpseio/glimpseviz/workflows/Tests/badge.svg?branch=master)](https://github.com/glimpseio/glimpseviz/actions)
 
 ## The Glimpse Format
 
