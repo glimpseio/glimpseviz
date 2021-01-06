@@ -31,7 +31,8 @@
   "scripts": {
     "prebuild": "yarn clean",
     "build": "yarn build:only",
-    "build:only": "tsc -p tsconfig.build.json && rollup -c",
+    "build:only": "yarn build:patcharrow9110 && tsc -p tsconfig.build.json && rollup -c",
+    "build:patcharrow9110": "sed -i -e 's;BigIntAvailable);(BigIntAvailable \\&\\& BigUint64ArrayAvailable));g' node_modules/apache-arrow/util/*.mjs",
     "clean": "rimraf build && rimraf examples/build",
     "copy:build": "cp -v build/*.js ../GUI/GlimpseModel/Resources/js",
     "eslintbase": "eslint .",
