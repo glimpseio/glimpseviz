@@ -1,6 +1,6 @@
 
 import * as fs from 'fs';
-import {Table, FloatVector, DateVector, Float16Vector, Schema, RecordBatchJSONWriter, JSONMessageReader, RecordBatchStreamReader, ArrowJSONLike} from 'apache-arrow';
+import {Table, FloatVector, DateVector, Float16Vector, Schema, RecordBatchJSONWriter, JSONMessageReader, RecordBatchStreamReader, RecordBatchReader, RecordBatchFileWriter, RecordBatchWriter, ArrowJSONLike} from 'apache-arrow';
 
 
 describe('arrow-api', () => {
@@ -37,6 +37,13 @@ describe('arrow-api', () => {
       expect(json.schema?.fields).toStrictEqual([{"children": [], "name": "precipitation", "nullable": true, "type": {"name": "floatingpoint", "precision": "SINGLE"}}, {"children": [], "name": "date", "nullable": true, "type": {"name": "date", "unit": "MILLISECOND"}}]);
       expect(json.batches?.length).toBe(1);
       expect(json.dictionaries).toBe(undefined);
+
+      const table = Table.from(JSON.parse(rainfallJSON));
+      let data = table.serialize('binary', false);
+      // console.log("data", data);
+
+      // let json2 = reader.pipe(RecordBatchFileWriter.throughNode());
+      // console.log("json2", json2);
 
       // json.pipe(process.stdout);
 
