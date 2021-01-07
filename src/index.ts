@@ -9,6 +9,7 @@ export {version};
 
 // export utilities
 export * as vg from 'vega';
+export * as vge from 'vega-embed';
 export * as vgg from 'vega-lite';
 export * as arrow from 'apache-arrow';
 

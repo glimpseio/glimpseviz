@@ -83,6 +83,7 @@
     "yaml-front-matter": "^4.1.1",
     "vega": "~5.17.0",
     "vega-lite": "~4.17.0",
+    "vega-embed": "~6.15.0",
     "vega-loader-arrow": "~0.0.9"
   },
   "peerDependencies": {},
