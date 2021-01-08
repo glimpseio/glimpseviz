@@ -19,7 +19,7 @@
   "types": "build/glimpseviz.module.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/glimpseio/GlimpseAPI.git"
+    "url": "https://github.com/glimpseio/glimpseviz.git"
   },
   "directories": {
     "test": "test"
@@ -35,7 +35,9 @@
     "build:patcharrow9110": "sed -i -e \"s;typeof BigInt !== 'undefined';typeof BigInt !== 'undefined' \\&\\& typeof BigInt64Array !== 'undefined';g\" node_modules/apache-arrow/util/compat.mjs",
     "clean": "rimraf build && rimraf examples/build",
     "run:glimpse": "open -a /Applications/Glimpse.app --args -glimpseviz $PWD/build/glimpseviz.js",
-    "copy:build": "cp -v build/*.js ../Glance/Glance/Resources/js",
+    "copy:build": "yarn copy:build:app && yarn copy:build:web",
+    "copy:build:app": "cp -v build/*.js ../Glance/Glance/Resources/js",
+    "copy:build:web": "mkdir -p ../../www.glimpse.io/glimpseviz/$npm_package_version && cp -v build/*.js ../../www.glimpse.io/glimpseviz/$npm_package_version/",
     "eslintbase": "eslint .",
     "format": "yarn eslintbase --fix && yarn prettierbase --write",
     "lint": "yarn eslintbase && yarn prettierbase --check",

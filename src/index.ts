@@ -13,6 +13,10 @@ export * as vge from 'vega-embed';
 export * as vgg from 'vega-lite';
 export * as arrow from 'apache-arrow';
 
+// vega = vg;
+// vegaLite = vgg;
+export * as glance from './render.js';
+
 export function makeConfig(): Config {
   let cfga: ConfigA = {
   };
@@ -41,6 +45,7 @@ export class GlimpseShell {
 }
 
 
+/*
 class Glance {
   static version = "0.0.1";
 
@@ -52,3 +57,5 @@ class Glance {
 
 
 export {Glance as glance};
+*/
+
