@@ -34,7 +34,7 @@
     "build:only": "yarn build:patcharrow9110 && tsc -p tsconfig.build.json && rollup -c",
     "build:patcharrow9110": "sed -i -e \"s;typeof BigInt !== 'undefined';typeof BigInt !== 'undefined' \\&\\& typeof BigInt64Array !== 'undefined';g\" node_modules/apache-arrow/util/compat.mjs",
     "clean": "rimraf build && rimraf examples/build",
-    "run:glimpse": "open -a /Applications/Glimpse.app --args -glimpseviz ${PWD}/build/glimpseviz.js",
+    "run:glimpse": "open -a /Applications/Glimpse.app --args -glimpseviz $PWD/build/glimpseviz.js",
     "copy:build": "cp -v build/*.js ../Glance/Glance/Resources/js",
     "eslintbase": "eslint .",
     "format": "yarn eslintbase --fix && yarn prettierbase --write",

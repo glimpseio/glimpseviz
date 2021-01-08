@@ -22,6 +22,9 @@ export function makeConfig(): Config {
   return true ? cfga : cfgb
 }
 
+
+
+
 // export function makeTable(): Table {
 //   let tab = Table.new()
 //   return tab
@@ -36,3 +39,16 @@ export class GlimpseShell {
   public dataTable: any;
   public renderOptions: any;
 }
+
+
+class Glance {
+  static version = "0.0.1";
+
+  static render(): void {
+    console.log("rendering", this);
+  }
+
+}
+
+
+export {Glance as glance};
