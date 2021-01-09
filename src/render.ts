@@ -1,6 +1,7 @@
 import * as vg from 'vega';
 import * as vgg from 'vega-lite';
 import vegaEmbed from 'vega-embed';
+// import Scenegraph from 'vega-scenegraph';
 
 export var version = "1.0";
 
@@ -236,6 +237,7 @@ function handleRenderResult(result: any, data: any) {
 }
 
 function sceneObject(ob: any): any {
+  // TODO: figure out how to use Scenegraph
   // return JSON.parse(vg.sceneToJSON(ob));
   return JSON.parse(JSON.stringify(ob));
 }
