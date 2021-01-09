@@ -15,7 +15,8 @@ export * as arrow from 'apache-arrow';
 
 // vega = vg;
 // vegaLite = vgg;
-export * as glance from './render.js';
+export * as glance from './render';
+
 
 export function makeConfig(): Config {
   let cfga: ConfigA = {

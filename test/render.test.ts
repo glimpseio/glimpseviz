@@ -1,5 +1,8 @@
 
 import * as glimpseviz from '../src/index';
+import * as glance from '../src/render';
+import * as vg from 'vega';
+import * as vgg from 'vega-lite';
 
 import {TopLevelSpec as GlimpseViz} from 'vega-lite';
 import {compile as compileGrammar} from 'vega-lite';
@@ -21,16 +24,21 @@ describe('rendering', () => {
 
       // need canvas in order to run, but jest-puppeteer seems to cause other test issues
 
-      glimpseviz.glance.render({
+      expect(glance.version).toBe("1.0");
+
+      let rendered = glance.render({
         'spec': spec,
         'returnSVG': true,
         'returnCanvas': false,
         'returnData': false,
+        'returnScenegraph': true,
         'opts': {
           'mode': 'vega-lite',
           'renderer': 'svg'
         }
       });
+
+      expect(rendered).toStrictEqual({});
 
 
       // var vegaSpec = opts['vegaSpec'];
