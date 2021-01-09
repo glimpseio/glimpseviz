@@ -37,7 +37,7 @@
     "run:glimpse": "open -a /Applications/Glimpse.app --args -glimpseviz $PWD/build/glimpseviz.js",
     "copy:build": "yarn copy:build:app && yarn copy:build:web",
     "copy:build:app": "cp -v build/*.js ../Glance/Glance/Resources/js",
-    "copy:build:web": "mkdir -p ../../www.glimpse.io/glimpseviz/$npm_package_version && cp -v build/*.js ../../www.glimpse.io/glimpseviz/$npm_package_version/",
+    "copy:build:web": "mkdir -p ../../www.glimpse.io/glimpseviz/$npm_package_version && cp -v build/*.js ../../www.glimpse.io/glimpseviz/$npm_package_version/ && cd ../../www.glimpse.io/glimpseviz/$npm_package_version/ && ln -svf glimpseviz.min.js index.js && cd .. && ln -sfv $npm_package_version current && ln -sfv current/index.js index.js",
     "eslintbase": "eslint .",
     "format": "yarn eslintbase --fix && yarn prettierbase --write",
     "lint": "yarn eslintbase && yarn prettierbase --check",
