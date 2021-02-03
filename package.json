@@ -31,8 +31,7 @@
   "scripts": {
     "prebuild": "yarn clean",
     "build": "yarn build:only",
-    "build:only": "yarn build:patcharrow9110 && tsc -p tsconfig.build.json && rollup -c",
-    "build:patcharrow9110": "sed -i -e \"s;typeof BigInt !== 'undefined';typeof BigInt !== 'undefined' \\&\\& typeof BigInt64Array !== 'undefined';g\" node_modules/apache-arrow/util/compat.mjs",
+    "build:only": "tsc -p tsconfig.build.json && rollup -c",
     "clean": "rimraf build && rimraf examples/build",
     "run:glimpse": "open -a /Applications/Glimpse.app --args -glimpseviz $PWD/build/glimpseviz.js",
     "copy:build": "yarn copy:build:app && yarn copy:build:web",
@@ -62,7 +61,6 @@
     "@types/jest": "^26.0.19",
     "@types/pako": "^1.0.1",
     "@wessberg/rollup-plugin-ts": "^1.3.7",
-    "apache-arrow": "^2.0.0",
     "axios": "^0.21.1",
     "browser-sync": "^2.26.12",
     "canvas": "^2.6.1",
@@ -85,7 +83,6 @@
     "vega": "~5.17.0",
     "vega-embed": "~6.15.0",
     "vega-lite": "~4.17.0",
-    "vega-loader-arrow": "~0.0.9",
     "yaml-front-matter": "^4.1.1"
   },
   "peerDependencies": {},

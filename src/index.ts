@@ -2,7 +2,6 @@ import pkg from '../package.json';
 const version = pkg.version;
 
 import {Config, ConfigA, ConfigB} from './config';
-import {Table} from 'apache-arrow';
 import {TopLevelSpec} from 'vega-lite';
 
 export {version};
@@ -11,7 +10,6 @@ export {version};
 export * as vg from 'vega';
 export * as vge from 'vega-embed';
 export * as vgg from 'vega-lite';
-export * as arrow from 'apache-arrow';
 
 // vega = vg;
 // vegaLite = vgg;
